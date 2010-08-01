@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :dialog_turns
+
   map.resources :static_annotations
 
   map.resources :dialog_turns

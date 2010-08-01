@@ -16,7 +16,7 @@ describe "/static_annotations/new.html.erb" do
     render
 
     response.should have_tag("form[action=?][method=post]", static_annotations_path) do
-      with_tag("input#static_annotation_guid[name=?]", "static_annotation[name]")
+      with_tag("input#static_annotation_name[name=?]", "static_annotation[name]")
       with_tag("input#static_annotation_annotation_type[name=?]", "static_annotation[annotation_type]")
       with_tag("input#static_annotation_points_id[name=?]", "static_annotation[points_id]")
     end

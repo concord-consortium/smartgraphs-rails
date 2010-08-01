@@ -3,7 +3,7 @@ require 'spec_helper'
 describe GuidePageSequence do
   before(:each) do
     @valid_attributes = {
-      :guid => "value for guid"
+      :name => "value for name"
     }
   end
 

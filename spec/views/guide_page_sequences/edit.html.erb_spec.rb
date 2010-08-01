@@ -6,7 +6,7 @@ describe "/guide_page_sequences/edit.html.erb" do
   before(:each) do
     assigns[:guide_page_sequence] = @guide_page_sequence = stub_model(GuidePageSequence,
       :new_record? => false,
-      :guid => "value for guid"
+      :name => "value for name"
     )
   end
 
@@ -14,7 +14,7 @@ describe "/guide_page_sequences/edit.html.erb" do
     render
 
     response.should have_tag("form[action=#{guide_page_sequence_path(@guide_page_sequence)}][method=post]") do
-      with_tag('input#guide_page_sequence_guid[name=?]', "guide_page_sequence[guid]")
+      with_tag('input#guide_page_sequence_name[name=?]', "guide_page_sequence[name]")
     end
   end
 end

@@ -6,16 +6,16 @@ describe "/guide_page_sequences/index.html.erb" do
   before(:each) do
     assigns[:guide_page_sequences] = [
       stub_model(GuidePageSequence,
-        :guid => "value for guid"
+        :name => "value for name"
       ),
       stub_model(GuidePageSequence,
-        :guid => "value for guid"
+        :name => "value for name"
       )
     ]
   end
 
   it "renders a list of guide_page_sequences" do
     render
-    response.should have_tag("tr>td", "value for guid".to_s, 2)
+    response.should have_tag("tr>td", "value for name".to_s, 2)
   end
 end

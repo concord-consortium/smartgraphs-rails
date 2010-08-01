@@ -37,6 +37,8 @@ annotate
 script/generate migration RenameGuidFromStaticAnnotationsToName
 rake db:migrate
 annotate
+script/generate rspec_scaffold DialogTurn name:string beforeText:text responseTemplate_id:string responseVerifier_id:string afterText:text nextTurnButtonTitle:string nextTurnForNominalResponse_id:string nextTurnForIncorrectResponse_id:string isLastTurn:boolean shouldAutoAdvance:boolean
+rake
 
 == Welcome to Rails
 

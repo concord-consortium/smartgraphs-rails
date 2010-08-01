@@ -3,7 +3,7 @@ require 'spec_helper'
 describe StaticAnnotation do
   before(:each) do
     @valid_attributes = {
-      :guid => "value for guid",
+      :name => "value for name",
       :annotation_type => "value for annotation_type",
       :points_id => "value for points_id"
     }

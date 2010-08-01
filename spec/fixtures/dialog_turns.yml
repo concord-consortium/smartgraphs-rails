@@ -1,7 +1,7 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  guid: MyString
+  name: MyString
   beforeText: MyText
   responseTemplate_id: MyString
   responseVerifier_id: MyString
@@ -13,7 +13,7 @@ one:
   shouldAutoAdvance: false
 
 two:
-  guid: MyString
+  name: MyString
   beforeText: MyText
   responseTemplate_id: MyString
   responseVerifier_id: MyString
@@ -23,7 +23,6 @@ two:
   nextTurnForIncorrectResponse_id: MyString
   isLastTurn: false
   shouldAutoAdvance: false
-
 
 # == Schema Information
 #
