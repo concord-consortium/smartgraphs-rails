@@ -1,3 +1,19 @@
+setup log, 8/5/2010:
+
+gem install rspec-rails
+gem install sqlite3
+(setup .rvmrc)
+(setup .gitignore)
+rake db:create
+script/generate controller home index
+rm public/index.html
+(remove default routes)
+(set home route)
+
+
+
+
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create 
