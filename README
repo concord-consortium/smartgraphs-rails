@@ -39,6 +39,19 @@ rake db:migrate
 annotate
 script/generate rspec_scaffold DialogTurn name:string beforeText:text responseTemplate_id:string responseVerifier_id:string afterText:text nextTurnButtonTitle:string nextTurnForNominalResponse_id:string nextTurnForIncorrectResponse_id:string isLastTurn:boolean shouldAutoAdvance:boolean
 rake
+script/generate migration RenameGuidePageSequenceToActivity
+script/generate rspec_scaffold Activity name:string
+rm db/migrate/20100805190735_create_activities.rb
+rake db:migrate
+mv app/controllers/guide_page_sequences_controller.rb ~/
+mv app/models/guide_page_sequence.rb ~/
+annotate
+mv spec/models/guide_page_sequence_spec.rb ~/
+mv spec/routing/guide_page_sequences_routing_spec.rb ~/
+mv spec/controllers/guide_page_sequences_controller_spec.rb ~/
+mv spec/views/guide_page_sequences/ ~/
+script/generate rspec
+rake spec
 
 == Welcome to Rails
 

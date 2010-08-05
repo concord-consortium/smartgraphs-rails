@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe "/guide_page_sequences/show.html.erb" do
-  include GuidePageSequencesHelper
+describe "/activities/show.html.erb" do
+  include ActivitiesHelper
   before(:each) do
-    assigns[:guide_page_sequence] = @guide_page_sequence = stub_model(GuidePageSequence,
+    assigns[:activity] = @activity = stub_model(Activity,
       :name => "value for name"
     )
   end

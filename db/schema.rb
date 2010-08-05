@@ -9,7 +9,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100720221202) do
+ActiveRecord::Schema.define(:version => 20100805185614) do
+
+  create_table "activities", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+  end
 
   create_table "dialog_turns", :force => true do |t|
     t.string   "name"
@@ -29,12 +35,6 @@ ActiveRecord::Schema.define(:version => 20100720221202) do
   create_table "dialog_turns_static_annotations", :id => false, :force => true do |t|
     t.integer "dialog_turn_id"
     t.integer "static_annotation_id"
-  end
-
-  create_table "guide_page_sequences", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "name"
   end
 
   create_table "guide_pages", :force => true do |t|

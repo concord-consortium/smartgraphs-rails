@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe GuidePageSequence do
+describe Activity do
   before(:each) do
     @valid_attributes = {
       :name => "value for name"
@@ -8,15 +8,13 @@ describe GuidePageSequence do
   end
 
   it "should create a new instance given valid attributes" do
-    GuidePageSequence.create!(@valid_attributes)
+    Activity.create!(@valid_attributes)
   end
 end
 
-
-
 # == Schema Information
 #
-# Table name: guide_page_sequences
+# Table name: activities
 #
 #  id         :integer         not null, primary key
 #  created_at :datetime

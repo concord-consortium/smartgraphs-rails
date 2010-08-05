@@ -1,12 +1,10 @@
-class GuidePageSequence < ActiveRecord::Base
+class Activity < ActiveRecord::Base
   has_many :guide_pages
 end
 
-
-
 # == Schema Information
 #
-# Table name: guide_page_sequences
+# Table name: activities
 #
 #  id         :integer         not null, primary key
 #  created_at :datetime
