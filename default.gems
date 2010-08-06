@@ -1,0 +1,27 @@
+# default.gems generated gem export file. Note that any env variable settings will be missing. Append these after using a ';' field separator
+abstract -v1.0.0
+daemons -v1.1.0
+erubis -v2.6.6
+eventmachine -v0.12.10
+extlib -v0.9.15
+gemcutter -v0.5.0
+git -v1.2.5
+jeweler -v1.4.0
+json_pure -v1.4.3
+rack -v1.2.1
+rspec -v1.3.0
+rubyforge -v2.0.4
+thin -v1.2.7
+thor -v0.13.7
+rails -v2.3.8
+sqlite3-ruby -v1.3.0
+rspec-rails -v1.3.2
+annotate -v2.4.0
+#passenger -v2.2.15
+gherkin -v2.1.4
+cucumber-rails -v0.3.2
+capybara -v0.3.9
+database_cleaner -v0.5.0
+autotest -v4.3.2
+autotest-rails-pure -v4.1.0
+#autotest-growl
