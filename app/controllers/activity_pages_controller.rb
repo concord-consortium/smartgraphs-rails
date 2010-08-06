@@ -1,6 +1,7 @@
 class ActivityPagesController < ApplicationController
 
   before_filter :find_activity
+  before_filter :find_page, :only => [:update, :show, :edit, :destroy]
   
   def index
     @pages = @activity.activity_pages
@@ -10,9 +11,7 @@ class ActivityPagesController < ApplicationController
     @page = ActivityPage.new(:activity => @activity)
   end
   
-  def update
-    @page = @activity.activity_pages.find(params[:id])
-    
+  def update  
     respond_to do |format|
       if @page.update_attributes(params[:activity_page])
         format.html { redirect_to(:action => 'show', :activity_id => @activity.id, :id => @page.id, :notice => 'Activity was successfully updated.') }
@@ -35,15 +34,12 @@ class ActivityPagesController < ApplicationController
   end
 
   def show
-    @page = @activity.activity_pages.find(params[:id])
   end
 
   def edit
-    @page = @activity.activity_pages.find(params[:id])
   end
   
   def destroy
-    @page = @activity.activity_pages.find(params[:id])    
     @page.destroy
     respond_to do |format|
       format.html { redirect_to(:controller => 'activities', :id => @activity.id, :action => 'show', :notice => 'Page was deleted.') }
@@ -53,6 +49,10 @@ class ActivityPagesController < ApplicationController
   private
     def find_activity
       @activity = Activity.find(params[:activity_id])
+    end
+    
+    def find_page
+      @page = @activity.activity_pages.find(params[:id])
     end
 
 end
