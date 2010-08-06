@@ -3,8 +3,9 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => 'home'
   
   # surely there's a meta pattern for this
-  map.resources :activities, :as => 'activity', :except => [:index, :create, :new]
   map.resources :activities, :only => [:index, :create, :new]
+  map.resources :activities, :as => 'activity'
+
   
   
   # The priority is based upon order of creation: first created -> highest priority.

@@ -11,6 +11,8 @@ rm public/index.html
 (set home route)
 script/server rspec_scaffold Activity title:string
 rake db:migrate
+(add config.action_controller.relative_url_root = '/backend' to config/environments.rb)
+(update routes to use /activities for index and /activity/nnn for show)
 
 
 
