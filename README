@@ -34,6 +34,8 @@ OOPS: don't want to use scaffold generator
 script/generate rspec_model ActivityPage activity:references name:string index:integer intro_text:text
 rake db:migrate
 
+script/generate rspec_controller ActivityPageController index show new edit
+oops .. rename ActivityPageController -> ActivityPageController (rename spec/controllers/activity_page_controller & app/controllers/activity_page_controller)
 
 
 

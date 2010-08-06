@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe ActivityPageController do
+describe ActivityPagesController do
 
   #Delete these examples and add some real ones
-  it "should use ActivityPageController" do
-    controller.should be_an_instance_of(ActivityPageController)
+  it "should use ActivityPagesController" do
+    controller.should be_an_instance_of(ActivityPagesController)
   end
 
 
