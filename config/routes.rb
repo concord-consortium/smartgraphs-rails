@@ -1,14 +1,21 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :activity_pages
-
 
   map.root :controller => 'home'
   
-  # surely there's a meta pattern for this
-  map.resources :activities, :only => [:index, :create, :new]
-  map.resources :activities, :as => 'activity'
 
+  # index, create, new actions go to /activities; create, update, edit, destroy actions go to /activity/nnn
+  plural_actions = [:index, :create, :new]
   
+  # activities_path -> /activities
+  map.resources :activities, :only => plural_actions                            
+
+  # activity_path(@activity) -> /activity/nnn
+  map.resources :activities, :except => plural_actions, :as => 'activity' do |activity|
+    # activity_pages_path(@activity) -> /activity/nnn/pages
+    activity.resources :activity_pages, :only => plural_actions, :as => 'pages', :name_prefix => nil
+    # activity_page_path(@activity) -> /activity/nnn/page/nnn
+    activity.resources :activity_pages, :except => plural_actions, :as => 'page', :name_prefix => nil
+  end
   
   # The priority is based upon order of creation: first created -> highest priority.
 
