@@ -10,19 +10,17 @@ class ActivitiesController < ApplicationController
     end
   end
 
-  # GET /activities/1
-  # GET /activities/1.xml
+  # GET /activity/1
   def show
     @activity = Activity.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @activity }
+      format.json { render :json => sc_json_for(@activity) }
     end
   end
 
   # GET /activities/new
-  # GET /activities/new.xml
   def new
     @activity = Activity.new
 
@@ -32,7 +30,7 @@ class ActivitiesController < ApplicationController
     end
   end
 
-  # GET /activities/1/edit
+  # GET /activity/1/edit
   def edit
     @activity = Activity.find(params[:id])
   end
