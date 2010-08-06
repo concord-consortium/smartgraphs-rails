@@ -1,0 +1,9 @@
+<b>Name: </b>
+  <%=h @page.name %>
+<b>Introductory Text: </b>
+<div style="padding: 1em 0 0 1em">
+  <%= @page.intro_text %>
+</div>
+
+<%= link_to 'Edit', edit_activity_page_path(@activity, @page) %> |
+<%= link_to 'Back', activity_pages_path(:activity => @activity) %>

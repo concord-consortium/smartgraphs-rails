@@ -1,0 +1,18 @@
+<h1>Pages in Activity <%=h @activity.title %></h1>
+
+<% @pages.each do |page| %>
+
+  <b>Name: </b>
+    <%=h page.name %>
+  <b>Introductory Text: </b>
+  <div style="padding: 1em 0 0 1em">
+    <%= page.intro_text %>
+  </div>
+
+  <hr>
+
+<% end %>
+
+<br />
+
+<%= link_to 'Make a new page in this activity', new_activity_page_path(@activity) %>

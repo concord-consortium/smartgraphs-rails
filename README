@@ -37,6 +37,7 @@ rake db:migrate
 script/generate rspec_controller ActivityPageController index show new edit
 oops .. rename ActivityPageController -> ActivityPageController (rename spec/controllers/activity_page_controller & app/controllers/activity_page_controller)
 
+(fleshed out controller methods and templates to get some basic editing)
 
 
 == Welcome to Rails

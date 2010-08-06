@@ -1,8 +1,26 @@
-<p>
-  <b>Title:</b>
-  <%=h @activity.title %>
-</p>
+<h1>Activity: <%=h @activity.title %></h1>
 
+<h2>Pages</h2>
 
+<% @activity.activity_pages.each do |page| %>
+
+  <b>Name: </b>
+    <%=h page.name %>
+  <b>Introductory Text: </b>
+  <div style="padding: 1em 0 0 1em">
+    <%= page.intro_text %>
+  </div>
+  
+  <%= link_to 'Show', activity_page_path(@activity, page) %> |
+  <%= link_to 'Edit', edit_activity_page_path(@activity, page) %></td>
+  <%= link_to 'Destroy', activity_page_path(@activity, page), :confirm => 'Are you sure?', :method => :delete %></td>
+  
+  <hr>
+
+<% end %>
+
+<br />
+
+<%= link_to 'Add page', new_activity_page_path(@activity) %> |
 <%= link_to 'Edit', edit_activity_path(@activity) %> |
 <%= link_to 'Back', activities_path %>
