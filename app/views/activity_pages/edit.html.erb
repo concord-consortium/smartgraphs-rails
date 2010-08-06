@@ -1,0 +1,24 @@
+<h1>Editing activity_page</h1>
+
+<% form_for(@activity_page) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :index %><br />
+    <%= f.text_field :index %>
+  </p>
+  <p>
+    <%= f.label :intro_text %><br />
+    <%= f.text_area :intro_text %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @activity_page %> |
+<%= link_to 'Back', activity_pages_path %>

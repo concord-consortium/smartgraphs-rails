@@ -1,0 +1,24 @@
+<h1>Listing activity_pages</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Index</th>
+    <th>Intro text</th>
+  </tr>
+
+<% @activity_pages.each do |activity_page| %>
+  <tr>
+    <td><%=h activity_page.name %></td>
+    <td><%=h activity_page.index %></td>
+    <td><%=h activity_page.intro_text %></td>
+    <td><%= link_to 'Show', activity_page %></td>
+    <td><%= link_to 'Edit', edit_activity_page_path(activity_page) %></td>
+    <td><%= link_to 'Destroy', activity_page, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New activity_page', new_activity_page_path %>

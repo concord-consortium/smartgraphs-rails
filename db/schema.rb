@@ -9,10 +9,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100806000813) do
+ActiveRecord::Schema.define(:version => 20100806023914) do
 
   create_table "activities", :force => true do |t|
     t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "activity_pages", :force => true do |t|
+    t.string   "name"
+    t.integer  "index"
+    t.text     "intro_text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
