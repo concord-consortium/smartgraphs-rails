@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100806040741) do
+ActiveRecord::Schema.define(:version => 20100806233539) do
 
   create_table "activities", :force => true do |t|
     t.string   "title"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(:version => 20100806040741) do
     t.string   "name"
     t.integer  "index"
     t.text     "intro_text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "activity_steps", :force => true do |t|
+    t.integer  "activity_page_id"
+    t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
