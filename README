@@ -9,6 +9,8 @@ script/generate controller home index
 rm public/index.html
 (remove default routes)
 (set home route)
+script/server rspec_scaffold Activity title:string
+rake db:migrate
 
 
 
