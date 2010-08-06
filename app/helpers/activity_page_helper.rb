@@ -1,0 +1,2 @@
+module ActivityPageHelper
+end
