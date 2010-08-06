@@ -5,6 +5,12 @@ class ActivityPagesController < ApplicationController
   
   def index
     @pages = @activity.activity_pages
+    urls = @pages.map { |p| activity_page_path(p.activity, p) }
+
+    respond_to do |format|
+      format.html #index.html.erb
+      format.json { render :json => @pages.map { |p| p.as_json } }
+    end
   end
 
   def new
@@ -34,6 +40,10 @@ class ActivityPagesController < ApplicationController
   end
 
   def show
+    respond_to do |format|
+      format.html #show.html.erb
+      format.json { render :json => @page }
+    end
   end
 
   def edit

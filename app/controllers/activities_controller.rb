@@ -13,10 +13,10 @@ class ActivitiesController < ApplicationController
   end
 
   # GET /activity/1
-  def show
+  def show  
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render :json => add_to(sc_json_for(@activity), { :pages_index_url => activity_page_path(@activity) }) }
+      format.json { render :json => @activity.as_json.merge(:pages_index_url => activity_pages_path(@activity)) }
     end
   end
 
