@@ -13,18 +13,9 @@ script/server rspec_scaffold Activity title:string
 rake db:migrate
 (add config.action_controller.relative_url_root = '/backend' to config/environments.rb)
 (update routes to use /activities for index and /activity/nnn for show)
-OOPS:
-  script/generate rspec_scaffold ActivityPage name:string index:integer intro_text:string
-  rake db:migrate
-  (realize intro_text should have been intro_text:text)
-  git reset --hard 7df5965a42
-  rake db:drop
-  rake db:create
-  rake db:schema:load
 
 
-script/generate rspec_scaffold ActivityPage name:string index:integer intro_text:text
-rake db:migrate
+
 
 
 == Welcome to Rails
