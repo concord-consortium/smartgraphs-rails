@@ -13,10 +13,9 @@ class ActivitiesController < ApplicationController
   # GET /activity/1
   def show
     @activity = Activity.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render :json => sc_json_for(@activity) }
+      format.json { render :json => add_to(sc_json_for(@activity), { :pages_index_url => activity_page_path(@activity) }) }
     end
   end
 

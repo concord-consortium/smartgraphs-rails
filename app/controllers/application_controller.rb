@@ -22,7 +22,8 @@ class ApplicationController < ActionController::Base
           # record :has_one child; return record['child_name']
           record.send(association.name)
       end
-
+      
+      # turn the associated record(s) into urls
       unless record_or_records.nil?
         if record_or_records.is_a?(Enumerable)
           content[association.name] = record_or_records.map { |r| polymorphic_path(r) } 
@@ -30,10 +31,23 @@ class ApplicationController < ActionController::Base
           content[association.name] = polymorphic_path(record_or_records)
         end
       end
+      
+      # # if we have_many X, give the app hints where to find the url
+      # 
+      # if association.macro == :has_many
+      #   content[association.name+'_index_url'] = polymorphic_path(record, 
+      # end
     end
 
     { :location => polymorphic_path(record), :content => content }
   end
-    
+  
+  def add_to(sc_json, hash)
+    sc_json = sc_json.dup
+    sc_json[:content].merge! hash
+    sc_json
+  end
+
+  
 end
 
