@@ -14,6 +14,25 @@ rake db:migrate
 (add config.action_controller.relative_url_root = '/backend' to config/environments.rb)
 (update routes to use /activities for index and /activity/nnn for show)
 
+  script/generate rspec_scaffold ActivityPage name:string index:integer intro_text:string
+  rake db:migrate
+  OOPS: (realize intro_text should have been intro_text:text)
+  git reset --hard 7df5965a42
+  rake db:drop
+  rake db:create
+  rake db:schema:load
+
+trying again:
+
+script/generate rspec_scaffold ActivityPage name:string index:integer intro_text:text
+rake db:migrate
+
+(fix routes to be nested)
+
+OOPS: don't want to use scaffold generator
+
+script/generate rspec_model ActivityPage activity:references name:string index:integer intro_text:text
+rake db:migrate
 
 
 
