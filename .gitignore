@@ -1,6 +1,0 @@
-.project
-db/development.sqlite3
-db/production.sqlite3
-log
-.DS_Store
-stats
