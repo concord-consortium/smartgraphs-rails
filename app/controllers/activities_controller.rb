@@ -16,7 +16,7 @@ class ActivitiesController < ApplicationController
   def show  
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render :json => @activity.as_json.merge(:pages_index_url => activity_pages_path(@activity)) }
+      format.json { render :json => @activity.as_json.merge(:page_list_url => activity_pages_path(@activity)) }
     end
   end
 
