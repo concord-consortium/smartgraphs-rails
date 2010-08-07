@@ -1,3 +1,8 @@
+8/6/2010:
+
+run rake db:setup to get started (this will populate the Sproutcore fixture data for Activity and ActivityPage)
+
+
 setup log, 8/5/2010:
 
 gem install rspec-rails
@@ -38,6 +43,8 @@ script/generate rspec_controller ActivityPageController index show new edit
 oops .. rename ActivityPageController -> ActivityPageController (rename spec/controllers/activity_page_controller & app/controllers/activity_page_controller)
 
 (fleshed out controller methods and templates to get some basic editing)
+
+...
 
 
 == Welcome to Rails

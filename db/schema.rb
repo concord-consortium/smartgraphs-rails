@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(:version => 20100806235657) do
     t.text     "intro_text"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "first_step"
     t.integer  "first_step_id"
   end
 
