@@ -12,7 +12,7 @@ class Activity < ActiveRecord::Base
   # :)
   
   def as_json(options={})
-    super({ :methods => :url }).merge(:pages => self.activity_pages.map { |p| p.url })
+    super(:methods => :url, :except => [:id, :created_at, :updated_at]).merge(:pages => self.activity_pages.map { |p| p.url })
   end
 
 end

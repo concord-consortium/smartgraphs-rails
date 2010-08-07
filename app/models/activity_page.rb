@@ -9,7 +9,14 @@ class ActivityPage < ActiveRecord::Base
   end
   
   def as_json(options={})
-    super({ :methods => :url }).merge(:steps => self.activity_steps.map { |s| s.url })
+    super(
+      :methods => :url, 
+      :except => [:id, :created_at, :updated_at, :activity_id, :first_step_id]
+    ).merge(
+      :steps => self.activity_steps.map { |s| s.url },
+      :activity => self.activity.url,
+      :first_step => self.first_step.url
+    )
   end
   
 end
