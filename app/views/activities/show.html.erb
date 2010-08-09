@@ -1,26 +1,25 @@
-<h1>Activity: <%=h @activity.title %></h1>
+<h1><%=h @activity.title %></h1>
+<h2>A Smartgraphs Activity</h2>
 
-<h2>Pages</h2>
-
-<% @activity.activity_pages.each do |page| %>
-
-  <b>Name: </b>
-    <%=h page.name %>
-  <b>Introductory Text: </b>
-  <div style="padding: 1em 0 0 1em">
-    <%= page.intro_text %>
-  </div>
+<ol class='activity-page-list'>
+  <% @activity.activity_pages.each do |page| %>  
+    <li class='activity-page'>
+      <%=h page.name %>
   
-  <%= link_to 'Show', activity_page_path(@activity, page) %> |
-  <%= link_to 'Edit', edit_activity_page_path(@activity, page) %></td>
-  <%= link_to 'Destroy', activity_page_path(@activity, page), :confirm => 'Are you sure?', :method => :delete %></td>
-  
-  <hr>
+      <span class='action-links'>
+        <%= link_to 'Edit', edit_activity_page_path(@activity, page) %> |
+        <%= link_to 'Delete', activity_page_path(@activity, page), 
+          :confirm => 'Are you sure?', :method => :delete %>
+      </span>
 
-<% end %>
+      <div class='activity-page-text'>
+        <%= page.intro_text %>
+      </div>
 
-<br />
+    </li>
+  <% end %>
+</ol>
 
-<%= link_to 'Add page', new_activity_page_path(@activity) %> |
-<%= link_to 'Edit', edit_activity_path(@activity) %> |
-<%= link_to 'Back', activities_path %>
+<%= link_to 'Add a page', new_activity_page_path(@activity) %> |
+<%= link_to 'Edit the title', edit_activity_path(@activity) %> |
+<%= link_to 'Back to activities list', activities_path %>

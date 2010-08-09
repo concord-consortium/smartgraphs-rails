@@ -5,16 +5,33 @@ body {
   color: #333;
 }
 
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 2em;
+}
+
 h1 {
   font-family: Verdana, Arial, sans-serif;
   font-size: 1.4em;
   margin-bottom: 1em;
 }
 
+h2 {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 1.2em;
+  margin-top: -0.8em;
+  margin-bottom: 1em;
+  color: #666;
+}
+
 ol, ul {
   padding-left: 1em;
   list-style-type: none;
   position: relative;     /* make it positioned so .action-links positioning works */
+}
+
+.activities-list {
   width: 30em;
 }
 
@@ -41,6 +58,19 @@ a {
 }
 
 a:hover { color: #fff; background-color:#000; }
+
+.activity-page-text {
+  padding: 0.5em 1em;
+}
+
+.activity-page-text h1 {
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+/** Scaffold stuff **/
+
 
 pre {
   background-color: #eee;
@@ -83,13 +113,3 @@ pre {
   font-size: 12px;
   list-style: square;
 }
-
-/** my additions */
-
-.wrapper {
-  width: 80%;
-  margin: 0 auto;
-  margin-top: 2em;
-}
-
-
