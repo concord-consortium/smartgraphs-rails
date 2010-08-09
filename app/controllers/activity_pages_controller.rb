@@ -20,7 +20,7 @@ class ActivityPagesController < ApplicationController
   def update
     respond_to do |format|
       if @page.update_attributes(params[:activity_page])
-        format.html { redirect_to( params[:return_to] ? params[:return_to] : activity_page_path(@activity, @page) ) }
+        format.html { redirect_to( params[:return_to] || activity_page_path(@activity, @page) ) }
       else
         format.html { render :action => "new" }
       end
@@ -32,7 +32,7 @@ class ActivityPagesController < ApplicationController
     
     respond_to do |format|
       if @page.save
-        format.html { redirect_to(:action => 'show', :activity_id => @activity.id, :id => @page.id, :notice => 'Activity was successfully created.') }
+        format.html { redirect_to(@activity, :notice => 'Page was successfully created.') }
       else
         format.html { render :action => "new" }
       end
@@ -52,7 +52,7 @@ class ActivityPagesController < ApplicationController
   def destroy
     @page.destroy
     respond_to do |format|
-      format.html { redirect_to(:controller => 'activities', :id => @activity.id, :action => 'show', :notice => 'Page was deleted.') }
+      format.html { redirect_to(@activity, :notice => 'Page was deleted.') }
     end
   end
   

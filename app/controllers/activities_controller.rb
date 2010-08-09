@@ -48,7 +48,7 @@ class ActivitiesController < ApplicationController
   def update
     respond_to do |format|
       if @activity.update_attributes(params[:activity])
-        format.html { redirect_to(@activity, :notice => 'Activity was successfully updated.') }
+        format.html { redirect_to(params[:return_to] || activities_path, :notice => 'Activity was successfully updated.') }
         #format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

@@ -7,10 +7,14 @@
   <p><%= f.label 'Page name: ' %><%= f.text_field :name %></p>
   <p>
     <%= f.label :intro_text %><br />
-    <%= f.text_area :intro_text %>
+    <%= f.text_area :intro_text, :cols => 60, :rows => 15 %>
+    <%= hidden_field_tag :return_to, params[:return_to] if params[:return_to] %>
   </p>
 
   <p>
     <%= f.submit 'Update' %>
   </p>
+  
+  <%= link_to 'Go back without updating', params[:return_to] || activity_page_path(@activity, @page) %>
+  
 <% end %>

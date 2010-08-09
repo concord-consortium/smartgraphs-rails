@@ -6,7 +6,8 @@
 
   <p> <%= f.label 'Activity Title' %>: <%= f.text_field :title %> </p>
   <p> <%= f.submit 'Update' %> </p>
+  <%= hidden_field_tag :return_to, params[:return_to] if params[:return_to] %>  
   
 <% end %>
 
-<%= link_to 'Go back without updating', :back %>
+<%= link_to 'Go back without updating', params[:return_to] || activity_path(@activity) %>

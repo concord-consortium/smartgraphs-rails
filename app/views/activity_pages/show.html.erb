@@ -1,9 +1,9 @@
-<b>Name: </b>
-  <%=h @page.name %>
-<b>Introductory Text: </b>
-<div style="padding: 1em 0 0 1em">
+<h1><%=h @page.name %></h1>
+<h2>A page from Smartgraphs activity &quot;<%=h @activity.title %>&quot;</h2>
+
+<div class='activity-page-text'>
   <%= @page.intro_text %>
 </div>
 
 <%= link_to 'Edit', edit_activity_page_path(@activity, @page) %> |
-<%= link_to 'Back', :back %>
+<%= link_to 'Back to activity', activity_path(@activity) %>
