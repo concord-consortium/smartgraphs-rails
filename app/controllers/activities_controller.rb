@@ -49,10 +49,10 @@ class ActivitiesController < ApplicationController
     respond_to do |format|
       if @activity.update_attributes(params[:activity])
         format.html { redirect_to(@activity, :notice => 'Activity was successfully updated.') }
-        format.xml  { head :ok }
+        #format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @activity.errors, :status => :unprocessable_entity }
+        #format.xml  { render :xml => @activity.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -63,7 +63,7 @@ class ActivitiesController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(activities_url) }
-      format.xml  { head :ok }
+      #format.xml  { head :ok }
     end
   end
   
