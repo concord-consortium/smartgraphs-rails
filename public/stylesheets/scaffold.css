@@ -1,20 +1,52 @@
-body { background-color: #fff; color: #333; }
-
-body, p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size:   13px;
+body {
+  font-family: Georgia, serif;
+  font-size:  16px;
   line-height: 18px;
+  color: #333;
 }
+
+h1 {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 1.4em;
+  margin-bottom: 1em;
+}
+
+ol, ul {
+  padding-left: 1em;
+  list-style-type: none;
+  position: relative;     /* make it positioned so .action-links positioning works */
+  width: 30em;
+}
+
+li {
+  padding: 0.5em 1em;
+}
+
+li:nth-child(even) {
+  background-color: #ffffe6;
+}
+
+li:nth-child(odd) {
+  background-color: #f0f0f0;
+}
+
+.action-links {
+  position: absolute;
+  right: 1em;
+}
+
+a { 
+  color: #33a; 
+  text-decoration: none;
+}
+
+a:hover { color: #fff; background-color:#000; }
 
 pre {
   background-color: #eee;
   padding: 10px;
   font-size: 11px;
 }
-
-a { color: #000; }
-a:visited { color: #666; }
-a:hover { color: #fff; background-color:#000; }
 
 .fieldWithErrors {
   padding: 2px;
@@ -51,4 +83,13 @@ a:hover { color: #fff; background-color:#000; }
   font-size: 12px;
   list-style: square;
 }
+
+/** my additions */
+
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 2em;
+}
+
 
