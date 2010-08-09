@@ -39,11 +39,16 @@ li {
   padding: 0.5em 1em;
 }
 
+
+li:nth-child(odd) {
+  background-color: #f0f0f0;
+}
+
 li:nth-child(even) {
   background-color: #ffffe6;
 }
 
-li:nth-child(odd) {
+li:nth-child(even).activity-page {
   background-color: #f0f0f0;
 }
 
@@ -71,6 +76,12 @@ a:hover { color: #fff; background-color:#000; }
   font-size: 1em;
   font-weight: bold;
   margin-bottom: 0.5em;
+}
+
+textarea, input {
+  font-size: 16px;
+  line-height: 18px;
+  padding: 0.2em;
 }
 
 /** Scaffold stuff **/
