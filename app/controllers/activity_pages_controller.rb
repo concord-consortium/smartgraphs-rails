@@ -20,7 +20,7 @@ class ActivityPagesController < ApplicationController
   def update
     respond_to do |format|
       if @page.update_attributes(params[:activity_page])
-        format.html { redirect_to( params[:return_to] || activity_page_path(@activity, @page) ) }
+        format.html { redirect_to( params[:return_to] || activity_page_path(@activity, @page), :notice => 'Page was successfully updated.' ) }
       else
         format.html { render :action => "new" }
       end
