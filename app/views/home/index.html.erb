@@ -1,10 +1,44 @@
 <html>
 <head>
-  <title>Beginnings of Rails App</title>
+  <title>Smartgraphs</title>
+  <style type='text/css'>
+    body {
+      font-family: Georgia, serif;
+      font-size:  16px;
+      line-height: 18px;
+      color: #333333;
+    }
+    
+    .wrapper {
+      width: 80%;
+      margin: 0 auto;
+      margin-top: 2em;
+    }
+    
+    h1 {
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 1.4em;
+      margin-bottom: 1em;
+    }
+  </style>
 </head>
 <body>
-  <h1>This is the beginnings of a Rails application.</h1>
-  <p>Really, we're not so interested in HTML templates as in JSON</p>
-  <%= link_to 'List of Activities', activities_path %> 
+  <div class='wrapper'>
+    <h1>Smartgraphs&mdash;what you're seeing</h1>
+  
+    <p>This is the backend server for Smartgraphs. It contains links to simple web forms which you can use to edit
+    some aspects of the Smartgraph activities we have written so far</p>
+  
+    <p>The forms and the underlying editing capabilities are intentionally simple. As the Smartgraphs
+    project continues, we will provide more sophisticated interfaces for creating and editing activities from within
+    the Smartgraph application itself, rather than on separate web pages like those you see on this site.</p>
+  
+    <p>The site you see here will eventually acquire a different purpose: to provide a search-engine-friendly view
+    into the content of the Smartgraph activities&mdash;<i>i.e.</i>, something you can Google&mdash;and, in turn, 
+    to provide links which you can click on in order to run the Smartgraphs activity you found in your search.</p>
+  
+    <p> To get started: here is the <%= link_to 'list of Smartgraphs activities', activities_path %> 
+    currently hosted on this server.</p>
+  </div>
 </body>
 </html>
