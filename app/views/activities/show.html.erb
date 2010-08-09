@@ -1,24 +1,7 @@
 <h1><%=h @activity.title %></h1>
 <h2>A Smartgraphs Activity</h2>
 
-<ol class='activity-page-list'>
-  <% @activity.activity_pages.each do |page| %>  
-    <li class='activity-page'>
-      <%=h page.name %>
-  
-      <span class='action-links'>
-        <%= link_to 'Edit', edit_activity_page_path(@activity, page) %> |
-        <%= link_to 'Delete', activity_page_path(@activity, page), 
-          :confirm => 'Are you sure?', :method => :delete %>
-      </span>
-
-      <div class='activity-page-text'>
-        <%= page.intro_text %>
-      </div>
-
-    </li>
-  <% end %>
-</ol>
+<%= render :partial => 'activity_pages/pages' %>
 
 <%= link_to 'Add a page', new_activity_page_path(@activity) %> |
 <%= link_to 'Edit the title', edit_activity_path(@activity) %> |
