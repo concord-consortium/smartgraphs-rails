@@ -1,12 +1,10 @@
-<h1>Page <%=h @page.name %> in Activity <%=h @activity.title %></h1>
+<h1><%=h @page.name %></h1>
+<h2>A page from Smartgraph activity &quot;<%=h @activity.title %>&quot;</h2>
 
 <% form_for @page, :url => activity_page_path(@activity, @page), :action => :update, :html => { :method => :put } do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
+  <p><%= f.label 'Page name: ' %><%= f.text_field :name %></p>
   <p>
     <%= f.label :intro_text %><br />
     <%= f.text_area :intro_text %>

@@ -4,7 +4,7 @@
 <% @activities.each do |activity| %>
   <li>
     <%= link_to activity.title, activity %> 
-    <span class='action-links'><%= link_to 'Edit', edit_activity_path(activity) %> | 
+    <span class='action-links'><%= link_to 'Edit', edit_activity_path(activity), :return_to => url_for() %> | 
     <%= link_to 'Delete', activity, :confirm => 'Are you sure?', :method => :delete %></span>
   </li>
 <% end %>

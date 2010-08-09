@@ -1,14 +1,14 @@
 class ActivityPagesController < ApplicationController
 
   before_filter :find_activity
-  before_filter :find_page, :only => [:update, :show, :edit, :destroy]
+  before_filter :find_page, :only => [:show, :edit, :update, :destroy]
   
   def index
     @pages = @activity.activity_pages
     urls = @pages.map { |p| activity_page_path(p.activity, p) }
 
     respond_to do |format|
-      format.html #index.html.erb
+      format.html
       format.json { render :json => @pages.map { |p| p.as_json } }
     end
   end
@@ -17,10 +17,10 @@ class ActivityPagesController < ApplicationController
     @page = ActivityPage.new(:activity => @activity)
   end
   
-  def update  
+  def update
     respond_to do |format|
       if @page.update_attributes(params[:activity_page])
-        format.html { redirect_to(:action => 'show', :activity_id => @activity.id, :id => @page.id, :notice => 'Activity was successfully updated.') }
+        format.html { redirect_to( params[:return_to] ? params[:return_to] : activity_page_path(@activity, @page) ) }
       else
         format.html { render :action => "new" }
       end
@@ -41,7 +41,7 @@ class ActivityPagesController < ApplicationController
 
   def show
     respond_to do |format|
-      format.html #show.html.erb
+      format.html
       format.json { render :json => @page }
     end
   end

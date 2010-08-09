@@ -1,16 +1,12 @@
-<h1>Edit Activity <%=h @activity.title %></h1>
+<h1><%=h @activity.title %></h1>
+<h2>A Smartgraphs Activity</h2>
 
 <% form_for(@activity) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
+  <p> <%= f.label 'Activity Title' %>: <%= f.text_field :title %> </p>
+  <p> <%= f.submit 'Update' %> </p>
+  
 <% end %>
 
-<%= link_to 'Show', @activity %> |
-<%= link_to 'Back', activities_path %>
+<%= link_to 'Go back without updating', :back %>

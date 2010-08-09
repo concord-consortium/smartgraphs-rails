@@ -5,17 +5,17 @@ class ActivitiesController < ApplicationController
   # GET /activities
   def index
     @activities = Activity.all
-
+    
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
       #format.json { ... }
     end
   end
 
   # GET /activity/1
-  def show  
+  def show
     respond_to do |format|
-      format.html # show.html.erb
+      format.html
       format.json { render :json => @activity.as_json.merge(:page_list_url => activity_pages_path(@activity)) }
     end
   end

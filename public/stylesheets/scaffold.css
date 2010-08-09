@@ -47,6 +47,10 @@ li:nth-child(odd) {
   background-color: #f0f0f0;
 }
 
+li.activity-page {
+  margin-top: 1em
+}
+
 .action-links {
   position: absolute;
   right: 1em;
