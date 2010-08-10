@@ -1,4 +1,9 @@
-# default.gems generated gem export file. Note that any env variable settings will be missing. Append these after using a ';' field separator
+# default.gems generated gem export file. 
+# Note that any env variable settings will be missing. 
+# Append these after using a ';' field separator
+# 2010-08-08
+# USE RUBY 1.8.7 since Rails isn't quite stable on 1.9.1 
+# and ruby-debug isn't available for 1.9 yet
 abstract -v1.0.0
 actionmailer -v2.3.8
 actionpack -v2.3.8
@@ -7,6 +12,7 @@ activeresource -v2.3.8
 activesupport -v2.3.8
 annotate -v2.4.0
 autotest -v4.3.2
+#autotest-growl -v0.2.4
 autotest-rails-pure -v4.1.0
 builder -v2.1.2
 capybara -v0.3.9
@@ -30,6 +36,7 @@ json_pure -v1.4.3
 linecache -v0.43
 mime-types -v1.16
 nokogiri -v1.4.3.1
+#passenger -v2.2.15
 rack -v1.2.1
 rack -v1.1.0
 rack-test -v0.5.4
@@ -44,6 +51,7 @@ rubyzip -v0.9.4
 selenium-webdriver -v0.0.27
 sqlite3-ruby -v1.3.0
 term-ansicolor -v1.0.5
+test-unit -v1.2.3
 thin -v1.2.7
 thor -v0.13.7
 trollop -v1.16.2
