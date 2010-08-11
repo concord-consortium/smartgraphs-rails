@@ -17,7 +17,7 @@ rake db:setup
 * If you want to run the development server, it will host everything with the url prefix /backend. 
  This includes static assets like the CSS, JS, and static HTML in the /public directory. 
  If you're using script/server to run the Rails backend, you'll want to run it with the command:
-script-server --path=/backend 
+script/server --path=/backend 
  This will correctly serve the static assets at /backend, so sc-server will serve, for example, your Rails css.
  TODO: In production, you'll want to serve the Rails backend from / rather than /backend 
  (we're not sure how to tell Rails to do this).
