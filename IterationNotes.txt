@@ -1,0 +1,63 @@
+8/9/2010:
+
+Incomplete list of things needed to deploy:
+
+* setup database.yml appropriately. To use sqlite, you can just copy config/database.sample.yml to config/database.yml. Don't commit database.yml!
+
+* run rake db:setup to get started (this will populate the Sproutcore fixture data for Activity and ActivityPage)
+
+* If you want to run the dev server, it will host everything with the url prefix /backend. This includes static assets like the CSS, JS, and static HTML in the /public directory. In production, you'll want to serve these from / rather than /backend; I'm not sure how to tell Rails to do this.
+
+* Regarding the above, if you're using script/server, you want to run `script-server --path=/backend`. This will correctly serve the static assets at /backend, so sc-server will serve, for example, your Rails css.
+
+
+
+setup log, 8/5/2010:
+
+gem install rspec-rails
+gem install sqlite3
+(setup .rvmrc)
+(setup .gitignore)
+rake db:create
+script/generate controller home index
+rm public/index.html
+(remove default routes)
+(set home route)
+script/server rspec_scaffold Activity title:string
+rake db:migrate
+(add config.action_controller.relative_url_root = '/backend' to config/environments.rb)
+(update routes to use /activities for index and /activity/nnn for show)
+
+  script/generate rspec_scaffold ActivityPage name:string index:integer intro_text:string
+  rake db:migrate
+  OOPS: (realize intro_text should have been intro_text:text)
+  git reset --hard 7df5965a42
+  rake db:drop
+  rake db:create
+  rake db:schema:load
+
+trying again:
+
+script/generate rspec_scaffold ActivityPage name:string index:integer intro_text:text
+rake db:migrate
+
+(fix routes to be nested)
+
+OOPS: don't want to use scaffold generator
+
+script/generate rspec_model ActivityPage activity:references name:string index:integer intro_text:text
+rake db:migrate
+
+script/generate rspec_controller ActivityPageController index show new edit
+oops .. rename ActivityPageController -> ActivityPageController (rename spec/controllers/activity_page_controller & app/controllers/activity_page_controller)
+
+(fleshed out controller methods and templates to get some basic editing)
+
+...
+
+8/8/2010
+rvm gemset create smartgraphs-rails
+rvm use 1.8.7-p299@smartgraphs-rails --default
+rvm gemset import
+script/generate rspec
+
