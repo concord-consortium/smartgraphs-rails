@@ -6,14 +6,14 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
 
-activity = Activity.create({ :title => 'Motion Without Words' })
+activity = Activity.create({ :title => 'Away and Toward' })
 pages = []
 
 
 ## Page 1
 
 steps = ActivityStep.create([
-  { :url => '/backend/activity/1/page/1/step/1/' }
+  { :url => '/backend/activity/1/page/1/step/1' }
 ])
 
 page = ActivityPage.create({ 
@@ -34,8 +34,8 @@ pages.push(page)
 ## Page 2
 
 steps = ActivityStep.create([
-  { :url => '/backend/activity/1/page/2/step/1/' },
-  { :url => '/backend/activity/1/page/2/step/2/' }
+  { :url => '/backend/activity/1/page/2/step/1' },
+  { :url => '/backend/activity/1/page/2/step/2' }
 ])
 
 page = ActivityPage.create({
@@ -55,8 +55,8 @@ pages.push(page)
 ## Page 3
 
 steps = ActivityStep.create([
-  { :url => '/backend/activity/1/page/3/step/1/' },
-  { :url => '/backend/activity/1/page/3/step/2/' }
+  { :url => '/backend/activity/1/page/3/step/1' },
+  { :url => '/backend/activity/1/page/3/step/2' }
 ])
 
 page = ActivityPage.create({
@@ -75,7 +75,7 @@ pages.push(page)
 ## Page 4
 
 steps = ActivityStep.create([
-  { :url => '/backend/activity/1/page/4/step/1/' }
+  { :url => '/backend/activity/1/page/4/step/1' }
 ])
 
 page = ActivityPage.create({
