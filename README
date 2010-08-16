@@ -4,6 +4,7 @@
 * Setup database.yml appropriately. 
  To use sqlite, you can just copy config/database.sample.yml to config/database.yml. 
  Don't commit database.yml to the source repository.
+cp config/database.sample.yml config/database.yml
 
 * Get ruby setup using RVM:
 rvm gemset create smartgraphs-rails
