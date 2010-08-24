@@ -4,8 +4,15 @@ class ActivityPagesController < ApplicationController
   before_filter :find_page, :only => [:show, :edit, :update, :destroy]
   
   def index
+    p '{:controller=>"activity_pages", :action=>"index"'
     @pages = @activity.activity_pages
+    p "@pages = @activity.activity_pages:"
+    p @pages
+    p ""
     urls = @pages.map { |p| activity_page_path(p.activity, p) }
+    p "urls = @pages.map { |p| activity_page_path(p.activity, p) }:"
+    p urls
+    p ""
 
     respond_to do |format|
       format.html

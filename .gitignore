@@ -10,6 +10,5 @@ stats/
 .project
 spec/controllers/activit*
 spec/views/activity_page/
-spec/views/activities/
 spec/routing/activit*
 spec/views/activity_pages/
