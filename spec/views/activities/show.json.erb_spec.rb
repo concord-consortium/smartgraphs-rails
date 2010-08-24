@@ -9,27 +9,27 @@
 require 'spec_helper'
 
 describe "activities/show.json.erb" do
+  before(:each) do
+    @activity_pages =  [ActivityPage.create(:name => "page name", :intro_text => "intro_text")]
+    @activity = Activity.create(:title => "title of activity", :activity_pages => @activity_pages)
+    assigns[:activity] = @activity
+  end
+
   it "renders JSON of @activity as Smartgraphs expects it" do
-    # Activity.stub(:find).with("37").and_return(mock_activity)
-      # get :show, :id => "37", :format=>"application/json"
-    @activity = stub_model(Activity, :id => "37", :title => "title of activity 37", :activity_id => "37")
-    p "@activity:"
-    p @activity
-    p ""
-    p "activity_pages_path(@activity):"
-    p activity_pages_path(@activity)
-    p ""
-    # :id = "37"
-    # :activity_id = "37"
-    # pages = [stub_model(ActivityPage)]
-    # p "pages = [stub_model(ActivityPage)]:"
-    # p pages
+    # p "@activity:"
+    # p @activity
+    # p ""
+    # p "@activity.as_json:"
+    # p @activity.as_json
+    # p ""
+    # p "activity_pages_path(@activity):"
+    # p activity_pages_path(@activity)
     # p ""
     
     render
-    p "rendered:"
-    p rendered
-    p ""
-    rendered.should contain("page_list_url")
+    # p "response.body:"
+    # p response.body
+    # p ""
+    response.body.should match("page_list_url")
   end
 end
