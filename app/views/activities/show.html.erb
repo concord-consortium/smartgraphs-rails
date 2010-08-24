@@ -4,5 +4,5 @@
 <%= render :partial => 'activity_pages/pages' %>
 
 <%= link_to 'Add a page', new_activity_page_path(@activity) %> |
-<%= link_to 'Edit the title', edit_activity_path(@activity, :return_to => url_for(:only_path => true)) %> |
+<%= link_to 'Edit the title', edit_activity_path(@activity, :return_to => url_for(@activity)) %> |
 <%= link_to 'Back to activities list', activities_path %>
